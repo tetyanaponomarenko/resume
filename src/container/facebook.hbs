@@ -1,0 +1,58 @@
+<main>
+  <h1>{{name}}</h1>
+  <hr />
+  {{#each users}}
+    <h2>{{name}}</h2>
+    <p>gender: {{gender}}</p>
+    <p>age: {{age}}</p>
+    <p>id:{{id}}</p>
+
+    {{#each friends}}
+      <h2>{{name}}</h2>
+      <p>gender: {{gender}}</p>
+      <p>age: {{age}}</p>
+      <p>id:{{id}}</p>
+      {{#each mutual_friends}}
+        <h3>Mutual_friends:</h3>
+        <h2>{{name}}</h2>
+        <p>gender: {{gender}}</p>
+        <p>age: {{age}}</p>
+        <p>id:{{id}}</p>
+        <p>Mutual friends:</p>
+        {{#each mutual_friends}}
+          <p>id: <i>{{id}}</i></p>
+          <p>name: <i>{{name}}</i></p>
+          <p>gender: <i>{{gender}}</i></p>
+          <p>age: <i>{{age}}</i></p>
+        {{/each}}
+      {{/each}}
+      {{#each groups}}
+        <p>name: {{name}}</p>
+        <p>id:{{id}}</p>
+        <p>desc: {{description}}</p>
+        {{#each members}}
+          <h3>Members:{{members}}</h3>
+          <h2>{{name}}</h2>
+          <p>gender: {{gender}}</p>
+          <p>age: {{age}}</p>
+          <p>id:{{id}}</p>
+        {{/each}}
+      {{/each}}
+
+      {{#each groups}}
+        <p>name: {{name}}</p>
+        <p>id:{{id}}</p>
+        <p>desc: {{description}}</p>
+        {{#each members}}
+          <h3>Members:{{members}}</h3>
+          <h2>{{name}}</h2>
+          <p>gender: {{gender}}</p>
+          <p>age: {{age}}</p>
+          <p>id:{{id}}</p>
+        {{/each}}
+      {{/each}}
+
+    {{/each}}
+  {{/each}}
+
+</main>
