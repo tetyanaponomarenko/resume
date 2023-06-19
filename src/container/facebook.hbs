@@ -3,39 +3,55 @@
   <hr />
   {{#each users}}
     <h2>{{name}}</h2>
-    <h4>gender: {{gender}}</h4>
-    <h4>age: {{age}}</h4>
-    <h4>id:{{id}}</h4>
+    <p>gender: {{gender}}</p>
+    <p>age: {{age}}</p>
+    <p>id:{{id}}</p>
 
     {{#each friends}}
-      <h3>Friends:{{Friends}}</h3>
       <h2>{{name}}</h2>
-      <h4>gender: {{gender}}</h4>
-      <h4>age: {{age}}</h4>
-      <h4>id:{{id}}</h4>
+      <p>gender: {{gender}}</p>
+      <p>age: {{age}}</p>
+      <p>id:{{id}}</p>
       {{#each mutual_friends}}
         <h3>Mutual_friends:</h3>
         <h2>{{name}}</h2>
-        <h4>gender: {{gender}}</h4>
-        <h4>age: {{age}}</h4>
-        <h4>id:{{id}}</h4>
-        {{#each groups}}
-          {{#each members}}
-            <h3>Members:{{members}}</h3>
-            <h2>{{name}}</h2>
-            <h4>gender: {{gender}}</h4>
-            <h4>age: {{age}}</h4>
-            <h4>id:{{id}}</h4>
-          {{/each}}
-        {{/each}}
-        {{#each groups}}
-          <h3>Groups:</h3>
-          <h2>{{name}}</h2>
-          <h3>{{description}}</h3>
-          <h4>id:{{id}}</h4>
-
+        <p>gender: {{gender}}</p>
+        <p>age: {{age}}</p>
+        <p>id:{{id}}</p>
+        <p>Mutual friends:</p>
+        {{#each mutual_friends}}
+          <p>id: <i>{{id}}</i></p>
+          <p>name: <i>{{name}}</i></p>
+          <p>gender: <i>{{gender}}</i></p>
+          <p>age: <i>{{age}}</i></p>
         {{/each}}
       {{/each}}
+      {{#each groups}}
+        <p>name: {{name}}</p>
+        <p>id:{{id}}</p>
+        <p>desc: {{description}}</p>
+        {{#each members}}
+          <h3>Members:{{members}}</h3>
+          <h2>{{name}}</h2>
+          <p>gender: {{gender}}</p>
+          <p>age: {{age}}</p>
+          <p>id:{{id}}</p>
+        {{/each}}
+      {{/each}}
+
+      {{#each groups}}
+        <p>name: {{name}}</p>
+        <p>id:{{id}}</p>
+        <p>desc: {{description}}</p>
+        {{#each members}}
+          <h3>Members:{{members}}</h3>
+          <h2>{{name}}</h2>
+          <p>gender: {{gender}}</p>
+          <p>age: {{age}}</p>
+          <p>id:{{id}}</p>
+        {{/each}}
+      {{/each}}
+
     {{/each}}
   {{/each}}
 
