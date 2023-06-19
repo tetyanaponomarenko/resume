@@ -1,0 +1,63 @@
+<main>
+  <h1>{{name}}</h1>
+  <h2>{{description}}</h2>
+  <hr />
+  <h2>price: {{price}}</h2>
+  <hr />
+  <h3>{{category}}</h3>
+
+  {{#with features}}
+    {{#with processor}}
+      <h3>{{brand}},
+        {{model}},
+        {{speed}},
+        {{cores}},
+        {{cache}}</h3>
+    {{/with}}
+    {{#with memory}}
+      <h3>{{type}}, {{size}}, {{speed}}</h3>
+    {{/with}}
+    {{#with storage}}
+      <h3>{{type}}, {{size}}</h3>
+    {{/with}}
+    {{#with display}}
+      <h3>{{size}},
+        {{resolution}},
+        {{technology}},
+        {{color_space}},
+        {{brightness}},
+        {{refresh_rate}}</h3>
+    {{/with}}
+    {{#with graphics}}
+      <h3>{{brand}},
+        {{model}},
+        {{memory}}
+      </h3>
+    {{/with}}
+    <br />
+    {{#with battery}}
+      <h3>{{type}}, {{capacity}}, {{life}}</h3>
+    {{/with}}
+    <br />
+    <h3>operating_system: {{operating_system}}</h3>
+    {{#each accessories}}
+      <h3>name: {{name}},price: {{price}}</h3>
+    {{/each}}
+    <br />
+    <h3>weight: {{weight}}</h3>
+    {{#with dimensions}}
+      <h3>{{height}}, {{width}}, {{depth}}</h3>
+    {{/with}}
+    <br />
+    {{#each ports}}
+      <h3>{{type}}, {{count}}</h3>
+      {{#each features}}
+        <h3>{{this}}</h3>
+      {{/each}}
+    {{/each}}
+  {{/with}}
+  {{#with type}}
+    <h3>{{count}}</h3>
+  {{/with}}
+  <hr />
+</main>
