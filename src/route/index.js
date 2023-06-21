@@ -743,7 +743,97 @@ router.get('/web', function (req, res) {
 
 // ================================================================
 
-<<<<<<< HEAD
+router.get('/js', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('js', {
+
+    layout: "basic",
+
+    page: {
+
+      title: 'Resume | Js',
+    },
+
+    name: 'JavaScript',
+    description:
+      'JavaScript is a popular high-level, dynamic, and interpreted programming language.',
+    history: {
+      year: 1995,
+      founder: 'Brendan Eich',
+    },
+    types: [
+      'Number',
+      'String',
+      'Boolean',
+      'Null',
+      'Undefined',
+      'Symbol',
+      'Object',
+    ],
+    syntax: {
+      variables: ['var', 'let', 'const'],
+      functions: ['function'],
+      conditionals: ['if', 'else', 'switch'],
+      loops: ['for', 'while', 'do-while'],
+      classes: ['class'],
+    },
+    features: [
+      'First-class functions',
+      'Closures',
+      'Dynamic typing',
+      'Prototype-based inheritance',
+      'Asynchronous programming with Promises and async/await',
+      'Modules with import/export statements',
+    ],
+    libraries: [
+      'jQuery',
+      'React',
+      'Angular',
+      'Vue',
+      'Node.js',
+      'Express.js',
+      'Lodash',
+      'Moment.js',
+    ],
+    tools: [
+      'Babel',
+      'Webpack',
+      'ESLint',
+      'Jest',
+      'Mocha',
+      'Chai',
+      'Selenium',
+      'Cypress',
+    ],
+    community: [
+      {
+        name: 'Stack Overflow',
+        type: 'forum',
+      },
+      {
+        name: 'JavaScript Weekly',
+        type: 'newsletter',
+      },
+      {
+        name: 'The Changelog',
+        type: 'podcast',
+      },
+      {
+        name: 'CSS-Tricks',
+        type: 'blog',
+      },
+    ],
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+
+
+// ================================================================
+
 // router.get Створює нам один ентпоїнт
 
 router.get('/car', function (req, res) {
@@ -751,38 +841,14 @@ router.get('/car', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('car', {
-=======
-<<<<<<< HEAD
-// router.get Створює нам один ентпоїнт
 
-router.get('/mac', function (req, res) {
-  // res.render генерує нам HTML сторінку
 
-  //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('mac', {
-=======
-<<<<<<< HEAD
-router.get('/js', function (req, res) {
-  // res.render генерує нам HTML сторінку
 
-  //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('js', {
-=======
-// router.get Створює нам один ентпоїнт
-
-router.get('/facebook', function (req, res) {
-  // res.render генерує нам HTML сторінку
-
-  //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('facebook', {
->>>>>>> 6c98b00e0c42aa82d4e1ce86e878c740b800399a
->>>>>>> c7a8737a409aa1c8d644eb174ea0c9b7714b2f87
->>>>>>> e4fbb96d4c6c88970826deafbbb448d86272f718
 
     layout: "basic",
 
     page: {
-<<<<<<< HEAD
+
       title: 'Resume | Car',
     },
 
@@ -874,10 +940,29 @@ router.get('/facebook', function (req, res) {
       },
       total: 28990,
     },
-=======
-<<<<<<< HEAD
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+router.get('/mac', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('mac', {
+
+    layout: "basic",
+
+    page: {
+
       title: 'Resume | Mac',
     },
+
 
     name: 'Apple MacBook Pro',
     description: 'The ultimate notebook for power users',
@@ -956,81 +1041,29 @@ router.get('/facebook', function (req, res) {
         },
       ],
     },
-=======
-<<<<<<< HEAD
-      title: 'Resume | Js',
-    },
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
 
-    name: 'JavaScript',
-    description:
-      'JavaScript is a popular high-level, dynamic, and interpreted programming language.',
-    history: {
-      year: 1995,
-      founder: 'Brendan Eich',
-    },
-    types: [
-      'Number',
-      'String',
-      'Boolean',
-      'Null',
-      'Undefined',
-      'Symbol',
-      'Object',
-    ],
-    syntax: {
-      variables: ['var', 'let', 'const'],
-      functions: ['function'],
-      conditionals: ['if', 'else', 'switch'],
-      loops: ['for', 'while', 'do-while'],
-      classes: ['class'],
-    },
-    features: [
-      'First-class functions',
-      'Closures',
-      'Dynamic typing',
-      'Prototype-based inheritance',
-      'Asynchronous programming with Promises and async/await',
-      'Modules with import/export statements',
-    ],
-    libraries: [
-      'jQuery',
-      'React',
-      'Angular',
-      'Vue',
-      'Node.js',
-      'Express.js',
-      'Lodash',
-      'Moment.js',
-    ],
-    tools: [
-      'Babel',
-      'Webpack',
-      'ESLint',
-      'Jest',
-      'Mocha',
-      'Chai',
-      'Selenium',
-      'Cypress',
-    ],
-    community: [
-      {
-        name: 'Stack Overflow',
-        type: 'forum',
-      },
-      {
-        name: 'JavaScript Weekly',
-        type: 'newsletter',
-      },
-      {
-        name: 'The Changelog',
-        type: 'podcast',
-      },
-      {
-        name: 'CSS-Tricks',
-        type: 'blog',
-=======
+// ================================================================
+
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+router.get('/facebook', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('facebook', {
+
+    layout: "basic",
+
+    page: {
+
       title: 'Resume | Facebook',
     },
+
 
     name: 'Facebook',
     users: [
@@ -1177,21 +1210,37 @@ router.get('/facebook', function (req, res) {
             ],
           },
         ],
->>>>>>> 6c98b00e0c42aa82d4e1ce86e878c740b800399a
       },
     ],
->>>>>>> c7a8737a409aa1c8d644eb174ea0c9b7714b2f87
->>>>>>> e4fbb96d4c6c88970826deafbbb448d86272f718
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
 // ================================================================
 
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/bootstrap', function (req, res) {
+  // res.render генерує нам HTML сторінку
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('bootstrap', {
+
+    layout: "bootstrap",
+
+    page: {
+
+      title: 'Resume | Bootstrap',
+    },
+  })
+})
+//                  ↑↑ сюди вводимо JSON дані
+
+// ================================================================
 
 
 // Підключаємо роутер до бек-енду
-
-
 
 module.exports = router
