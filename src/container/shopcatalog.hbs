@@ -103,12 +103,15 @@
                     {{/each}}
                 {{/with}}
            </div>
-           </section>
-            <!--next-->
-                   
-                <section>
-                       {{>catalogItem}}
-                </section>   
+           <div class='col-8'>
+  <div class='row'>
+    {{#each goodsList}}
+            
+                    {{>catalogItem}}
+                       {{/each}}
+                </section>  
+                </div> 
+                </div>
             
            <!--next-->
     <section>
