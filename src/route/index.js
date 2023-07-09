@@ -3,51 +3,61 @@ const express = require('express')
 // Cтворюємо роутер - місце, куди ми підключаємо ендпоїнти
 const router = express.Router()
 
-// ================================================================
-
 var header = {
   name: {
-    firstname: 'Ivan',
-    lastname: 'Ivanov',
+    firstname: 'Tetyana',
+    lastname: 'Ponomarenko',
   },
   position: 'Junior Fullstack JS Developer',
-  salary: "600$ в місяць",
-  address: 'Ukraine, Kharkiv',
+  address: 'Ukraine, Kharkiv city, Heroev Pratsi street 30',
+  salary: '600$ в місяць',
 }
-
 var footer = {
   social: {
-
     email: {
-      text: 'ivanov@mail.com',
-      href: 'mailto:ivanov@mail.com',
+      text: 'vselennaya43@gmail.com',
+      href: 'vselennaya43@gmail.com',
     },
     phone: {
-      text: '+380670000123',
-      href: 'tel:+380670000123',
+      text: '+380677687605',
+      href: 'tel:+380677687605',
     },
     linkedin: {
-      href: 'https://www.linkedin.com/in/dmytro-test',
       text: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/%D1%82%D0%B5%D1%82%D1%8F%D0%BD%D0%B0-%D0%BF%D0%BE%D0%BD%D0%BE%D0%BC%D0%B0%D1%80%D0%B5%D0%BD%D0%BA%D0%BE-472629282%81%D0%B2%D0%B5%D1%82%D0%BB%D0%B0%D0%BD%D0%B0-%D0%BD%D0%B5%D1%87%D0%B5%D1%82%D0%B0-188847197/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BqJgfrqVgTyOs0LxnWrRT8g%3D%3D',
     },
   },
 }
 
-
-// ================================================================
-
+//=================================================================
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('', {
+  res.render('index', {
   })
 })
 //                  ↑↑ сюди вводимо JSON дані
 
 // ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/resume', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('resume', {
+    layout: 'basic',
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+
 
 // router.get Створює нам один ентпоїнт
 
@@ -78,18 +88,6 @@ router.get('/summary', function (req, res) {
     footer,
   })
 })
-
-
-
-
-
-
-
-
-
-
-
-
 
 // ================================================================
 
@@ -1677,7 +1675,7 @@ router.get('/shophome', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shophome', {
-    layout: 'shop',
+    layout: "basic",
     page: {
 
       title: 'Resume | Shophome',
@@ -1975,7 +1973,7 @@ router.get('/shoporder', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shoporder', {
-    layout: 'shop',
+    layout: "basic",
 
     page: {
 
@@ -2352,7 +2350,7 @@ router.get('/shopprofile', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopprofile', {
-    layout: 'shop',
+    layout: "basic",
 
     page: {
 
@@ -2657,7 +2655,7 @@ router.get('/shopcart', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopcart', {
 
-    layout: 'shop',
+    layout: "basic",
 
     page: {
 
@@ -2915,7 +2913,7 @@ router.get('/shopreview', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopreview', {
-    layout: 'shop',
+    layout: "basic",
     page: {
 
       title: 'Resume | Shopreview',
@@ -3212,7 +3210,7 @@ router.get('/shopcatalog', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopcatalog', {
-    layout: 'shop',
+    layout: "basic",
     page: {
 
       title: 'Resume | Shopcatalog',

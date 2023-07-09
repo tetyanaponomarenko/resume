@@ -1,26 +1,22 @@
- 
-  <footer>
-	<hr class="my-5"
-	 <div>
-    {{#with social}}
+ {{#with footer}}
+	 <footer>
+        
+		<div class="card m-4 p-2">
+            <div class="card-body">
+            {{#with social}}
+            
+                {{>link text=email.text href=email.href}}    
+                {{>link text=phone.text href=phone.href}}
+                {{>link text=linkedin.text href=linkedin.href}}
+            
+            {{/with}}
 
-       
-         {{> link text=email.text href=email.href blank=true }}
-         {{> link text=phone.text href=phone.href blank=true }}
-         {{> link text=linkedin.text href=linkedin.href blank=true }}
-         
-
-    {{/with}}
-  	</div>
-	
-	<div class="my-3">
-      <em>Copyright by {{../header/name/firstname}} {{../header/name/lastname}}</em>
-	</div>
-	
-	<div>
-		<address>
-			{{../header/address}}
-		</address>
-	</div>
-  </footer>
+            <em>Copiright {{../header.name.firstname}} {{../header.name.lastname}}</em>
+            
+        
+        {{../header.address}}
+        </div>
+    </div>
+    </footer>
+	{{/with}}
   

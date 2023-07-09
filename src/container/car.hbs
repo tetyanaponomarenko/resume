@@ -1,107 +1,177 @@
-<main>
-  <h1>{{make}} {{model}} {{year}} {{color}}</h1>
-  <hr />
-  {{#with features}}
-    {{#with interior}}
-      {{#with seats}}
-        <h3>material:{{material}}</h3>
-        <h3>color:{{color}}</h3>
-        <h3>{{#if heated}}heated{{/if}}
-          {{#if ventilated}}ventilated{{/if}}</h3>
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+<div class='jumbotron text-leght'>
+  <div>
+    <a href='/' class='btn btn-warning m-4 p-2'>Головна</a>
+  </div>
+  <main>
+    <h1><span class='text-primary'>{{make}}
+        {{model}}
+        {{year}}</span></h1>
+    <h2><span class='text-secondary'>color-
+        {{color}}</span></h2>
+    <section class='container'>
+      {{#with features}}
+        <div>
+          <h2><span
+              class='text-secondary'
+            >Interior</span></h2>
+          {{#with interior}}
+            <hr />
+            <div>
+              <h3><span class='text-info'>Seats</span></h3>
+              {{#with seats}}
+                <span class='text-dark'><p
+                  >Material-{{material}}</p></span>
+                <span class='text-dark'><p>
+                    Color-{{color}}</p></span>
+                {{#if heated}}
+                  <p><span
+                      class='text-success'
+                    >+heated</span></p>
+                {{/if}}
+                {{#if ventilated}}
+                  <p><span class='text-success'>
+                      +ventilated</span></p>
+                {{/if}}
+              {{/with}}
+            </div>
+            <hr />
+            <div>
+              <h3><span
+                  class='text-info'
+                >Dashboard</span></h3>
+              {{#with dashboard}}
+                <span class='text-dark'><p
+                  >Material-{{material}}</p></span>
+                <span class='text-dark'><p>
+                    Color-{{color}}</p></span>
+                {{#with display}}
+                  <div>
+                    <p class='text-dark'>type {{type}}</p>
+                    <p class='text-dark'> size {{size}}</p>
+                    <p class='text-dark'>resolution
+                      {{resolution}}</p>
+                    {{#if touchscreen}}
+                      <p class='text-success'>+ touchscreen
+                      </p>
+                    {{/if}}
+                  </div>
+                {{/with}}
+              {{/with}}
+            </div>
+            <br />
+            <div>
+              <h3><span class='text-info'>audio</span></h3>
+              {{#with audio}}
+                <p class='text-dark'>system {{system}}</p>
+                <p class='text-dark'>
+                  speakers
+                  {{speakerse}}</p>
+                {{#if subwoofer}}
+                  <p class='text-success'>+ subwoofer </p>
+                {{/if}}
+                {{#if bluetooth}}
+                  <p class='text-success'>+ bluetooth</p>
+                {{/if}}
+                {{#if USB}}
+                  <p class='text-success'>+ USB</p>
+                {{/if}}
+              {{/with}}
+              <hr />
+            </div>
+          {{/with}}
+        </div>
+        <div>
+          <h3><span class='text-info'>exterior</span></h3>
+          {{#with exterior}}
+            <div>
+              <h4><span class='text-info'>
+                  wheels</span></h4>
+              {{#with wheels}}
+                <p class='text-dark'>size {{size}}</p>
+                <p class='text-dark'>type {{type}}</p>
+                <p class='text-dark'>color {{color}}</p>
+              {{/with}}
+            </div>
+            <br />
+            <div>
+              <h4><span class='text-info'>
+                  headlights</span></h4>
+              {{#with headlights}}
+                <p class='text-dark'> type {{type}}</p>
+                <p class='text-dark'>brightness
+                  {{brightness}}</p>
+                {{#if automatic}}
+                  <p class='text-success'>+ automatic</p>
+                {{/if}}
+              {{/with}}
+            </div>
+            <br />
+            <div>
+              <h4><span class='text-info'>
+                  sunroof</span></h4>
+              {{#with sunroof}}
+                <p class='text-dark'> type {{type}}</p>
+                <p class='text-dark'>brightness
+                  {{brightness}}</p>
+                {{#if automatic}}
+                  <p class='text-success'>+ automatic</p>
+                {{/if}}
+              {{/with}}
+            </div>
+            <br />
+          {{/with}}
+        </div>
       {{/with}}
-      <br />
-      {{#with dashboard}}
-        <h3>material:{{material}}</h3>
-        <h3>color:{{color}}</h3>
-        {{#with display}}
-          <h3>type:{{type}}</h3>
-          <h3>size:{{size}}</h3>
-          <h3>resolution:{{resolution}}</h3>
-          <h3>{{#if touchscreen}}touchscreen{{/if}}</h3>
+      <div>
+        {{#with engine}}
+          <p class='text-dark'>type {{type}}</p>
+          <p class='text-dark'>
+            displacement
+            {{displacement}}</p>
+          <p class='text-dark'>
+            horsepower
+            {{horsepower}}</p>
+          <p class='text-dark'>torque {{torque}}</p>
+          {{#with transmission}}
+            <p class='text-dark'>transmission type:
+              {{type}}</p>
+            <p class='text-dark'>transmission gears:
+              {{gears}}</p>
+          {{/with}}
+          <br />
+        {{/with}}
+      </div>
+      <div>
+        <h4><span class='text-info'>
+            Fuel economy</span></h4>
+        {{#with fuel_economy}}
+          <p class='text-dark'>city - {{city}}</p>
+          <p class='text-dark'>highway - {{highway}}</p>
+          <p class='text-dark'>combined - {{combined}}</p>
         {{/with}}
         <br />
-      {{/with}}
-      {{#with audio}}
-        <h3>system: {{system}}</h3>
-        <h3>speakers:{{speakers}}</h3>
-        <h3>{{#if subwoofer}}subwoofer{{/if}}</h3>
-        <h3>{{#if bluetooth}}bluetooth{{/if}}</h3>
-        <h3>{{#if USB}}USB{{/if}}</h3>
-      {{/with}}
-    {{/with}}
-    <br />
-    {{#with exterior}}
-      {{#with wheels}}
-        <h3>size:{{size}}</h3>
-        <h3>type:{{type}}</h3>
-        <h3>color:{{color}}</h3>
-      {{/with}}
-      <br />
-      {{#with headlights}}
-        <h3>type: {{type}}</h3>
-        <h3>brightness:{{brightness}}</h3>
-        <h3>{{#if automatic}}automatic{{/if}}</h3>
-      {{/with}}
-      <br />
-      {{#with sunroof}}
-        <h3>type: {{type}}</h3>
-        <h3>size:{{size}}</h3>
-        <h3>{{#if automatic}}automatic{{/if}}</h3>
-      {{/with}}
-    {{/with}}
-    {{#with safety}}
-      {{#with airbags}}
-        <h3>front: {{front}}</h3>
-        <h3>side:{{side}}</h3>
-        <h3>knee:{{knee}}</h3>
-        <h3>rear:{{rear}}</h3>
-      {{/with}}
-      <br />
-      {{#with assistance}}
-        <h3>{{#if blind_spot_monitoring}}
-            blind_spot_monitoring{{/if}}</h3>
-        <h3>{{#if
-            rear_cross_traffic_alert
-          }}rear_cross_traffic_alert{{/if}}</h3>
-        <h3>{{#if
-            lane_departure_warning
-          }}lane_departure_warning{{/if}}</h3>
-        <h3>{{#if
-            aadaptive_cruise_control
-          }}adaptive_cruise_control{{/if}}</h3>
-        <h3>{{#if
-            collision_warning
-          }}collision_warning{{/if}}</h3>
-      {{/with}}
-    {{/with}}
-  {{/with}}
-  <br />
-  {{#with engine}}
-    <h3>type: {{type}}</h3>
-    <h3>displacement: {{displacement}}</h3>
-    <h3>horsepower: {{horsepower}}</h3>
-    <h3>torque: {{torque}}</h3>
-    {{#with transmission}}
-      <h3>type: {{type}}</h3>
-      <h3>gears: {{gears}}</h3>
-    {{/with}}
-  {{/with}}
-  <br />
-  {{#with fuel_economy}}
-    <h3>city: {{city}}</h3>
-    <h3>highway: {{highway}}</h3>
-    <h3>combined: {{combined}}</h3>
-  {{/with}}
-  <br />
-  {{#with price}}
-    <h3>base: {{base}}</h3>
-    <h3>destination: {{destination}}</h3>
-    {{#with options}}
-      <h3>navigation: {{navigation}}</h3>
-      <h3>moonroof: {{moonroof}}</h3>
-      <h3>premium_paint: {{premium_paint}}</h3>
-    {{/with}}
-    <h2>total: {{total}}</h2>
-  {{/with}}
-  <hr />
-</main>
+      </div>
+      <div>
+        <h4><span class='text-info'>Price</span></h4>
+        {{#with price}}
+          <p class='text-dark'>base - {{base}}</p>
+          <p class='text-dark'>destination -
+            {{destination}}</p>
+          <h5><span class='text-info'>Options</span></h5>
+          {{#with options}}
+            <p class='text-dark'>navigation -
+              {{navigation}}</p>
+            <p class='text-dark'>moonroof - {{moonroof}}</p>
+            <p class='text-dark'>premium_paint -
+              {{premium_paint}}</p>
+          {{/with}}
+          <p class='text-dark'>total - {{total}}</p>
+        {{/with}}
+      </div>
+    </section>
+  </main>
+</div>

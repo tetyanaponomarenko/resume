@@ -14,7 +14,7 @@
                         <a href={{links.[2].href}} class="nav-link">{{links.[2].text}}</a> 
                     </div>            
                     <div class="nav-item">
-                        <a class="nav-link">{{link text="Головна" href="/"}}</a>  
+                        <a class="nav-link">{{>link text="Головна" href="/"}}</a>  
                     </div>
                 </div>
             </div>
@@ -102,18 +102,21 @@
                     </div>    
                     {{/each}}
                 {{/with}}
-           </div>
-           <div class='col-8'>
-  <div class='row'>
-    {{#each goodsList}}
-            
-                    {{>catalogItem}}
-                       {{/each}}
-                </section>  
-                </div> 
+
+            </div>
+            <div class="col-8">
+                <div class="row">
+                   
+                    {{#each goodsList}}
+                       {{>catalogitem}}
+                    {{/each}}
+                    
                 </div>
-            
-           <!--next-->
+
+            </div>
+        </div>
+    </section>
+    <!--next-->
     <section>
     {{#with service}}
         <div class="card m-2 p-0 text-bg-success">

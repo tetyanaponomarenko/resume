@@ -1,38 +1,51 @@
-
-
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
 <div>
-   {{#with main}}
-    <main>
-     <section>
-		   {{> title data="My educations" big=true}}
-        
-     <ul class="ps-5">
-	    	{{#each educations}}
-         <li>
-            {{name}}
-            {{#unless isEnd}} (ще в процесі) {{/unless}}
-            
-         </li>
-          {{/each}} 
-      </ul>   
-     </section> 
-
-     <section>
-       {{> title data="My certificates"}}
-       <ul class="ps-5">
-	    	{{#each certificates}}
-         <li>
-            {{name}} ({{id}}) 
-         </li>
-          {{/each}} 
-      </ul>   
-      </section>
-    </main>          
-	 {{/with}}	   
-</div>
-  
- 
+<div>
+    <a href="/"class="btn btn-warning m-4 p-2">Головна</a>
+ </div>
+<div class="card">
+    <div class="card-body">
+            {{#with main}}
+                <main>
+                    <section>
+                        {{>title data="My Edication" big=true}}
+                        <ul>
+                            {{#each edication}}
+                            <li>
+                                {{name}}
+                                {{#unless isEnd}}
+                                    (Ще в процесі)
+                                {{/unless}}
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </section>
+                    <br>
+                    <section>
+                        {{>title data="My certificates" big=false}}
+                        <ul>
+                            {{#each certificates}}
+                            <li>
+                                {{name}}({{id}})
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </section>
+                </main>
+            {{/with}}
+        </div>
+    </div>
     
-  
- 
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
+
+    
+
 

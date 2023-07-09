@@ -1,18 +1,72 @@
-{{! 
-Це код container файлу для index сторінки, 
-в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
- }}
-
-<div class='p-5'>
-  <h1>USB хаб Type C 12 в 1 HDMI VGA AUX 3.5 mm</h1>
-
-  <button
-    type='button'
-    class='btn btn-secondary'
-  >Купити</button>
+<main>
+<header>
+     <button class="btn btn-primary m-3 p-2">{{>resume}} </button>
+</header>
+<div class="card">
+    <div class="card-body text-bg-light">
+        <h1 class="display-2 text-primary">Resume project</h1>
+        <p class="text-danger text-bg-light">(дуже складно,але і дуже захоплююче)</p>
+        <p class="text-success">(складається з декілька сторінок)</p>
+    </div>
 </div>
+<div class="card text-bg-warning">
+    <div class="card-body">
+      <div class="card m-4 p-2">
+                     <div class="card-body"> 
+                        <div class="row">
+                           <div class="col-4">
+                                <button class="btn btn-primary m-3 p-2">{{>link text="Shopcart" href="/shopcart"}} </button>
+                                <br>
+                                <button class="btn btn-primary m-3 p-2">{{>link text="Shopprofile" href="/shopprofile"}} </button>
+                                <br>
+                             </div>
+                             <div class="col-4">
+                                <button class="btn btn-primary m-3 p-2">{{>link text="Shophome" href="/shophome"}} </button>
+                                <br>
+                                <button class="btn btn-primary m-3 p-2"> {{>link text="Shopcatalog" href="/shopcatalog"}} </button>
+                                <br>
+                            </div>
+                            <div class="col-4">
+                                <button class="btn btn-primary m-3 p-2">{{>link text="Shopreview" href="/shopreview"}} </button>
+                                <br>
+                                <button class="btn btn-primary m-3 p-2">{{>link text="Shoporder" href="/shoporder"}} </button>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card m-4 p-2">
+                    <div class="card-body text-bg-secondary">
+                        <div class="row">
+                        <div class="col-6">
+                            <button class="btn btn-outline-info m-3 p-2">{{>link text="Task31" href="/task31"}} </button>
+                            <br>
+                            <button class="btn btn-outline-info m-3 p-2"> {{>link text="Car" href="/car"}} </button>
+                            <br>
+                            <button class="btn btn-outline-info m-3 p-2">{{>link text="Mac" href="/mac"}} </button>
+                            <br>
+                            <button class="btn btn-outline-info m-3 p-2">{{>link text="bio" href="/bio"}} </button>
+                            <br>
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-outline-info m-3 p-2"> {{>link text="Facebook" href="/facebook"}} </button>
+                            <br>
+                            <button class="btn btn-outline-info m-3 p-2">{{>link text="Task22" href="/task22"}} </button>
+                            <br>
+                            <button class="btn btn-outline-info m-3 p-2">{{>link text="Program" href="/program"}} </button>
+                            <br>
+                            <button class="btn btn-outline-info m-3 p-2">{{>link text="JS" href="/js"}} </button>
+                            <br>
+                     </div>
+                </div>
+            </div>
+        
+    </div>     
+</div>
+</main>
 
-{{! 
+{{!-- 
     Цей код містить лише те, що буде виводитись в <body>
     Адже наш layout/default.hbs має вже структуру HTML
-}}
+--}}
