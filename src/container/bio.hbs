@@ -1,124 +1,146 @@
-<div>Albert Einstein</div>
-<ul>
-  <li>birthdate: 'March 14, 1879'</li>
-  <li>birthplace:'Ulm, Kingdom of Württemberg, German
-    Empire'</li>
-  <li>deathdate: 'April 18, 1955'</li>
-  <li>deathplace: 'Princeton, New Jersey, United States'</li>
-  <li>nationality: 'Swiss, German, American'</li>
-  <li>occupation: 'Theoretical Physicist'</li>
-</ul>
-
-<br />
-<hr />
-
-<div>known_for:</div>
-<ul>
-  <li>'Theory of Relativity'</li>
-  <li>'E=mc²'</li>
-  <li>'Photoelectric Effect'</li>
-  <li>'Brownian Motion'</li>
-</ul>
-
-<br />
-<hr />
-
-<div>education:</div>
-<ul>
-  <li>degree:'Doctor of Philosophy'</li>
-  <li>field:'Physics'</li>
-  <li>institution:'University of Zurich'</li>
-  <li>year: 1905</li>
-</ul>
-
-<br />
-<hr />
-<div> notable_publications:</div>
-<ul>
-  <li> title:'On the Electrodynamics of Moving Bodies'</li>
-  <li>year:1905'</li>
-  <li>publisher:'Annalen der Physik</li>
-</ul>
-<br />
-<hr />
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
 <div>
-  title:'Does the Inertia of a Body Depend Upon Its Energy
-  Content?'</div>
-<ul>
-  <li>year: 1905</li>
-  <li> publisher:'Annalen der Physik'</li>
-</ul>
-<br />
-<hr />
-<div>partners:</div>
-<ul>
-  <li>name:'Mileva Marić'</li>
-  <li>relationship:'First wife'</li>
-  <li>years:'1903-1919'</li>
-  <br />
-  <li> name: 'Elsa Einstein'</li>
-  <li>relationship:"Second wife, also Einstein's first
-    cousin"</li>
-  <li>years:'1919-1936'</li>
-</ul>
-<br />
-<hr />
-<div>awards:</div>
-<ul>
-  <li>title:'Nobel Prize in Physics'</li>
-  <li>year:1921</li>
-  <li>description:'Awarded for his explanation of the
-    photoelectric effect'</li>
-</ul>
-<br />
-<hr />
-<div>influences:</div>
-<ul>
-  <li>'Isaac Newton'</li>
-  <li>'James Clerk Maxwell'</li>
-  <li>'Hermann Minkowski'</li>
-</ul>
-<br />
-<hr />
-<div>influenced:</div>
-<ul>
-  <li>'Niels Bohr'</li>
-  <li>'Erwin Schrödinger'</li>
-  <li>'Werner Heisenberg'</li>
-  <li>'Richard Feynman'</li>
-</ul>
-<br />
-<hr />
-<div>quotes:</div>
-<ul>
-  <li>'Imagination is more important than knowledge.'</li>
-  <li>'I have no special talent. I am only passionately
-    curious.'</li>
-  <li>'The important thing is not to stop questioning.'</li>
-  <li>'The important thing is not to stop questioning.'</li>
-</ul>
-<br />
-<hr />
-<div>major_discoveries:</div>
-<ul>
-  <li>title:'Photoelectric Effect'</li>
-  <li>year: 1905</li>
-  <li>description:'Einstein explained the photoelectric
-    effect, where electrons are emitted from a metal surface
-    when it is illuminated by light.'</li>
-</ul>
-<br />
-<hr />
-<div>contributions:</div>
-<ul>
-  <li>title:'Inventions'</li>
-  <li>year: 1905</li>
-  <li>description: 'Leonardo designed and invented a wide
-    variety of machines and devices, including a helicopter,
-    a diving suit, and a self-propelled cart. Many of his
-    inventions were centuries ahead of their time.'</li>
-  <li>year:'Late 15th to early 16th century'</li>
-  <li>field:'Invention'</li>
-</ul>
-<br />
-<hr />
+     <div>
+        <a href="/"class="btn btn-warning m-4 p-2">Головна</a>
+    </div>
+    <h1>{{name}}</h1>
+    <header>
+        <div class="card">
+                <div class="card-body">
+                    <hr>
+                    <p>Birthdate: {{birthdate}} </p> 
+                    <br>
+                    <p> Birthplace: {{birthplace}}</p>
+                    <br>
+                    <p> Deathdate: {{deathdate}}</p>
+                    <br>
+                    <p>Deathplace: {{deathplace}}</p>
+                    <br>
+                    <p>nationality: {{nationality}}</p>
+                    <br>
+                    <hr>
+                </div>
+        </div>
+    </header>
+    <main>
+        <div class="card">
+         <div class="card-body">
+       <section>
+          <div><h2>Occupation: {{occupation}}</h2></div>
+          <ul>
+            {{#each known_for }}
+            <li>
+                {{this}}
+            </li>
+            {{/each}}
+          </ul>
+       </section>
+        <section>
+            <div>
+                <h2>Education:</h2>
+                <ul>
+                {{#each  education}}
+                <li>
+                    <p>Degtee-{{ degree}}, field - {{ field}},({{institution}},{{year}})</p>
+                    <br>
+                </li>
+                {{/each}}
+                </ul>
+            </div>
+            <div>
+                <h2> Notable publications:</h2>
+                <ul>
+                {{#each   notable_publications}}
+                <li>
+                    <p>{{ title}} / {{ year}} / {{ publisher}}</p>
+                    <br>
+                </li>
+                {{/each}}
+                </ul>
+                <hr>
+            </div>
+       </section>
+       <section>
+         <div>
+             <h3> Partners:</h3>
+             <ol>
+                {{#each  partners}}
+                <li>
+                    <p> {{name}} - {{relationship}} ( {{ years}})</p>
+                </li>
+                {{/each}}
+             </ol>
+             <hr>
+         </div>
+       </section>
+       <section>
+        <div>
+            <ul>
+                {{#each awards }}
+                <li>
+                    <em>{{title}}/{{year}}-{{ description}}</em>
+                </li>
+                {{/each}}
+                <br>
+            </ul>
+        </div>
+        <div>
+            <h3>Influences</h3>
+            <ul>
+                {{#each influences}}
+                <li>
+                   {{this}}
+                {{/each}}
+                <br>
+            </ul>
+            <br>
+            <h3>Influenced</h3>
+            <ul>
+                {{#each influenced}}
+                <li>
+                   {{this}}
+                {{/each}}
+                <br>
+            </ul>
+            <br>
+            <h3>Quotes</h3>
+            <ul>
+                {{#each  quotes}}
+                <li>
+                   {{this}}
+                {{/each}}
+                <br>
+            </ul>
+            <br>
+        </div>
+        <hr>
+       </section>
+       <section>
+            <div>
+                 <h2>Major discoveries</h2>
+                 <ul>
+                 {{#each major_discoveries}}
+                     <li>
+                        <em>{{ title}}/{{year}}/ {{ description}} </em>
+                    </li>
+                 {{/each}}
+                </ul>
+                <br>
+                <h3>Contribution</h3>
+                {{#with contributions}}
+                <div><em>{{title}}</em></div>
+                <div>{{description}}</div>
+                <div>{{ year}}</div>
+                <div>{{field}}</div>
+                {{/with}}
+            </div>
+       </section>
+       </div>
+    </div>
+    </main>
+    
+   
+</div>
