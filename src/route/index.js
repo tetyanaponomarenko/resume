@@ -16,7 +16,7 @@ var footer = {
   social: {
     email: {
       text: 'vselennaya43@gmail.com',
-      href: 'vselennaya43@gmail.com',
+      href: 'mailto:vselennaya43@gmail.com',
     },
     phone: {
       text: '+380677687605',
@@ -24,7 +24,7 @@ var footer = {
     },
     linkedin: {
       text: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/%D1%82%D0%B5%D1%82%D1%8F%D0%BD%D0%B0-%D0%BF%D0%BE%D0%BD%D0%BE%D0%BC%D0%B0%D1%80%D0%B5%D0%BD%D0%BA%D0%BE-472629282%81%D0%B2%D0%B5%D1%82%D0%BB%D0%B0%D0%BD%D0%B0-%D0%BD%D0%B5%D1%87%D0%B5%D1%82%D0%B0-188847197/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BqJgfrqVgTyOs0LxnWrRT8g%3D%3D',
+      href: 'https://www.linkedin.com/in/тетяна-пономаренко-472629282/',
     },
   },
 }
